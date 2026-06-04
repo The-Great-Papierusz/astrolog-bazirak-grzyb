@@ -1,11 +1,11 @@
 //import { useState } from 'react'
 import './App.css'
 import {useState} from "react";
-import type {SpaceObject} from "./assets/SpaceObject.ts";
+import type {celestialBody} from "./assets/CelestialBody.ts";
 
 function App() {
   // const [count, setCount] = useState(0)
-    const [spaceObj, setSpaceObj] = useState<SpaceObject[]>([
+    const [celestBody, setCelestBody] = useState<celestialBody[]>([
         {
             id: 1,
             name: 'Mars',
@@ -26,15 +26,18 @@ function App() {
 
   return (
       <>
-        <div id='leftSection'>
-            <div className='Bodies'>
-                List should be in these kinds of bodies
-                And Form Below it
-                Use Bodies class name
-            </div>
-        </div>
+          <div id='leftSection'>
+              <div className='Bodies'>
+                  List should be in these kinds of bodies
+                  And Form Below it
+              </div>
+              <div className='Bodies'>
+                  Use Bodies class name when adding
+              </div>
+          </div>
         <div id='mainSection'>
-          Information About the Stuff goes Here
+            <h1> ASTROLOG </h1>
+            <h2 id='celestialName'> Bodies Name Here </h2>
 
         </div>
       </>

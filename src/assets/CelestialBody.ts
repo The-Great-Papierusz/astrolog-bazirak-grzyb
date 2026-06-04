@@ -1,4 +1,4 @@
-﻿export interface SpaceObject {
+﻿export interface celestialBody {
     id: number;
     name: string;
     type: string;
