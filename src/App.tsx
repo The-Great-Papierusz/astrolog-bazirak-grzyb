@@ -2,6 +2,7 @@
 import './App.css'
 import {useState} from "react";
 import type {celestialBody} from "./assets/CelestialBody.ts";
+import CelestialBodyList from "./assets/SpaceObjectList.tsx";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -10,7 +11,7 @@ function App() {
             id: 1,
             name: 'Mars',
             type: 'Planet',
-            image: 'https://en.wikipedia.org/wiki/Mars#/media/File:Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png/960px-Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png',
             distance: '225 Mil KM',
 
         },
@@ -18,7 +19,7 @@ function App() {
             id: 2,
             name: 'Jupiter',
             type: 'Planet',
-            image: 'https://en.wikipedia.org/wiki/Jupiter#/media/File:Jupiter_OPAL_2024.png',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Jupiter_OPAL_2024.png/960px-Jupiter_OPAL_2024.png',
             distance: '590 Mil KM',
 
         }
@@ -27,13 +28,7 @@ function App() {
   return (
       <>
           <div id='leftSection'>
-              <div className='Bodies'>
-                  List should be in these kinds of bodies
-                  And Form Below it
-              </div>
-              <div className='Bodies'>
-                  Use Bodies class name when adding
-              </div>
+              <CelestialBodyList bodyList={celestBody} />
           </div>
         <div id='mainSection'>
             <h1> ASTROLOG </h1>
