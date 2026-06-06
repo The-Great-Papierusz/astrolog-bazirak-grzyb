@@ -2,7 +2,7 @@
 import './App.css'
 import {useState} from "react";
 import type {celestialBody} from "./assets/CelestialBody.ts";
-import CelestialBodyList from "./assets/SpaceObjectList.tsx";
+import CelestialBodyList from "./assets/CelestBodyList.tsx";
 
 function App() {
   // const [count, setCount] = useState(0)
