@@ -123,6 +123,12 @@ code {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  gap: 4px;
+}
+
+#celestBodyList {
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
@@ -146,13 +152,28 @@ code {
   transition: opacity 0.5s ease, background-color 0.5s ease;
   border-radius: 15px;
   color: #08060d;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 8px;
+
+  h3
+  {
+    letter-spacing: 3px;
+    font-style: italic;
+  }
 }
 .Bodies:hover
 {
   background: #F4F0F5;
 
 }
-
+.Bodies > img
+{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
 
 
 #mainSection
@@ -161,3 +182,4 @@ code {
   width: 100%;
   position: relative;
 }
+
