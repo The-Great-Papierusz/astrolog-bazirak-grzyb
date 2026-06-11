@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import type {celestialBody} from "./CelestialBody.ts";
 
@@ -28,38 +27,50 @@ export default function CelestBodyForm({ onAdd }: Props) {
         setImage("");
         setDistance("");
     };
-
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder="Nazwa"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-            />
+        <div className="formContainer">
+            <form onSubmit={handleSubmit}>
+                <div className="formRow">
+                    <label>Nazwa:</label>
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                </div>
 
-            <input
-                type="text"
-                placeholder="Typ"
-                value={type}
-                onChange={(e) => setType(e.target.value)}
-            />
+                <div className="formRow">
+                    <label>Typ:</label>
+                    <input
+                        type="text"
+                        value={type}
+                        onChange={(e) => setType(e.target.value)}
+                    />
+                </div>
 
-            <input
-                type="text"
-                placeholder="URL obrazka"
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-            />
+                <div className="formRow">
+                    <label>URL:</label>
+                    <input
+                        type="text"
+                        value={image}
+                        onChange={(e) => setImage(e.target.value)}
+                    />
+                </div>
 
-            <input
-                type="number"
-                placeholder="Odległość od Słońca"
-                value={distance}
-                onChange={(e) => setDistance(String(e.target.value))}
-            />
+                <div className="formRow">
+                    <label>Odległość:</label>
+                    <input
+                        type="number"
+                        value={distance}
+                        onChange={(e) => setDistance(e.target.value)}
+                    />
+                </div>
 
-            <button type="submit">Dodaj</button>
-        </form>
+                <button type="submit" className="addButton">
+                    Dodaj
+                </button>
+            </form>
+        </div>
+
     );
 }
