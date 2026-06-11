@@ -60,7 +60,6 @@ export default function CelestBodyForm({ onAdd }: Props) {
                 <div className="formRow">
                     <label>Odległość:</label>
                     <input
-                        type="number"
                         value={distance}
                         onChange={(e) => setDistance(e.target.value)}
                     />
