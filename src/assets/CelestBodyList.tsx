@@ -1,17 +1,20 @@
 import type {celestialBody} from "./CelestialBody.ts";
-import {BodyView} from "./CelestBodyView.tsx";
 
 interface CelestialBodyListProps {
-    bodyList: celestialBody[]
+    bodyList: celestialBody[];
+    onSelect: (body: celestialBody) => void;
 }
 
-function CelestialBodyList({bodyList}: CelestialBodyListProps) {
+function CelestialBodyList({bodyList,onSelect}: CelestialBodyListProps) {
     return(
         <div id='celestBodyList'>
             {bodyList.map(
                 (body) =>
                     (
-                        <div className='Bodies' onClick={() => BodyView(body)}>
+                        <div
+                            className='Bodies'
+                            onClick={() => onSelect(body)}
+                        >
                             <img src={body.image} />
                             <h3>{body.name}</h3>
                         </div>

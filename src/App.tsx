@@ -3,9 +3,16 @@ import './App.css'
 import {useState} from "react";
 import type {celestialBody} from "./assets/CelestialBody.ts";
 import CelestialBodyList from "./assets/CelestBodyList.tsx";
+import CelestBodyForm from "./assets/CelestBodyForm";
+import BodyView from "./assets/CelestBodyView.tsx";
+
 
 function App() {
   // const [count, setCount] = useState(0)
+    const addBody = (body: celestialBody) => {
+        setCelestBody([...celestBody, body]);
+    };
+    const [selectedBody, setSelectedBody] = useState<celestialBody | null>(null);
     const [celestBody, setCelestBody] = useState<celestialBody[]>([
         {
             id: 1,
@@ -28,12 +35,17 @@ function App() {
   return (
       <>
           <div id='leftSection'>
-              <CelestialBodyList bodyList={celestBody} />
+
+              <CelestialBodyList
+                  bodyList={celestBody}
+                  onSelect={setSelectedBody}
+              />
           </div>
         <div id='mainSection'>
             <h1> ASTROLOG </h1>
-            <h2 id='celestialName'> Bodies Name Here </h2>
-
+            <BodyView body={selectedBody} />
+            <CelestBodyForm onAdd={addBody} />
+            
         </div>
       </>
     )
