@@ -12,6 +12,10 @@ function App() {
     const addBody = (body: celestialBody) => {
         setCelestBody([...celestBody, body]);
     };
+    const delBody = (body: celestialBody) => {
+        setCelestBody(celestBody.filter(b => b !== body));
+        setSelectedBody(null);
+    };
     const [selectedBody, setSelectedBody] = useState<celestialBody | null>(null);
     const [celestBody, setCelestBody] = useState<celestialBody[]>([
         {
@@ -42,9 +46,12 @@ function App() {
               />
           </div>
         <div id='mainSection'>
-            <h1> ASTROLOG </h1>
-            <BodyView body={selectedBody} />
-            <CelestBodyForm onAdd={addBody} />
+            <h1>ASTROLOG</h1>
+
+            <BodyView body={selectedBody} onDel={delBody} />
+            <div id='coolerFormContainer'>
+                <CelestBodyForm onAdd={addBody} />
+            </div>
             
         </div>
       </>

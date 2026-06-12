@@ -1,10 +1,11 @@
 import type { celestialBody } from "./CelestialBody.ts";
 
-interface Props {
+interface CelestialBodyListProps {
     body: celestialBody | null;
+    onDel: (body: celestialBody) => void;
 }
 
-export default function BodyView({ body }: Props) {
+export default function BodyView({ body,onDel }: CelestialBodyListProps) {
 
     if (!body) {
         return <h2>Wybierz planetę z listy</h2>;
@@ -23,6 +24,8 @@ export default function BodyView({ body }: Props) {
                 <p>Typ: {body.type}</p>
 
                 <p>Odległość: {body.distance}</p>
+
+                <button onClick={() => onDel(body)}> Delete </button>
             </div>
 
         </div>

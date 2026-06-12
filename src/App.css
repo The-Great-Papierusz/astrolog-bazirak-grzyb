@@ -249,7 +249,14 @@
   gap: 50px;
 
   margin-top: 40px;
+  background: #5D5966;
+  width: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  margin-left: 204px;
 }
+
 
 .bodyImage img {
   width: 300px;
@@ -257,11 +264,23 @@
 
   object-fit: cover;
   border-radius: 20px;
+  transition: transform 0.5s ease;
+}
+
+.bodyImage img:hover {
+  width: 300px;
+  height: 300px;
+  transform: scale(1.05);
+
+  object-fit: cover;
+  border-radius: 20px;
+
 }
 
 .bodyInfo {
   color: white;
   text-align: left;
+
 }
 
 .bodyInfo h2 {
