@@ -25,7 +25,7 @@ export default function BodyView({ body,onDel }: CelestialBodyListProps) {
 
                 <p>Odległość: {body.distance}</p>
 
-                <button onClick={() => onDel(body)}> Delete </button>
+                <button onClick={() => onDel(body)} id="delButt"> Delete </button>
             </div>
 
         </div>

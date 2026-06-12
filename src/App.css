@@ -292,3 +292,22 @@
   font-size: 24px;
   margin: 10px 0;
 }
+
+#delButt
+{
+  width: 200px;
+  height: 40px;
+  background-color: #e63e4c;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  transition: background-color 0.5s ease;
+}
+
+#delButt:hover
+{
+  width: 200px;
+  height: 40px;
+  background-color: #ff7d8a;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
